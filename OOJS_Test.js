@@ -5,11 +5,19 @@ class Shape{
   this.sides = sides;
   this.sideLength = sideLength;
   this.calcPerimeter = function calcPerimeter() {
-    console.log(this.sideLength * this.sides)
+    return this.sideLength * this.sides;
   }
 }
 }
-let square = new Shape('square', 4, 5);
-square.calcPerimeter();
-let triangle = new Shape('triangle', 3, 3);
-triangle.calcPerimeter();
+class Square extends Shape{
+  constructor(sideLength) {
+    super("square" ,4 ,sideLength);
+  }
+  calcArea(){
+    return this.sideLength * this.sideLength
+  }
+
+}
+let square = new Square(5);
+console.log(square.calcPerimeter());
+console.log(square.calcArea());
